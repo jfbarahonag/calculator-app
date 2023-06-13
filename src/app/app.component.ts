@@ -14,7 +14,7 @@ const operations: {[key in OperatorType]: (a: number, b: number) => number} = {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'calculator';
+  title = 'Calculator App';
 
   calc = {
     A: 0,
@@ -22,7 +22,7 @@ export class AppComponent {
     result: 0,
   };
 
-  calculate(operator: OperatorType) {
+  calculate(operator: OperatorType): void {
     this.calc.result = operations[operator](this.calc.A, this.calc.B);
   }
 }
