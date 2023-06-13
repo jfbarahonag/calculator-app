@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
 
-type OperatorType = '+' | '-' | '/' | '*';
-const operations: {[key in OperatorType]: (a: number, b: number) => number} = {
-  '+': (a, b) => a + b,
-  '-': (a, b) => a - b,
-  '/': (a, b) => a / b,
-  '*': (a, b) => a * b,
-};
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,13 +8,9 @@ const operations: {[key in OperatorType]: (a: number, b: number) => number} = {
 export class AppComponent {
   title = 'Calculator App';
 
-  calc = {
-    A: 0,
-    B: 0,
-    result: 0,
-  };
+  result: number = 0;
 
-  calculate(operator: OperatorType): void {
-    this.calc.result = operations[operator](this.calc.A, this.calc.B);
+  assignResult(res: number) {
+    this.result = res;
   }
 }

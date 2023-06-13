@@ -1,0 +1,33 @@
+<form class="form row">
+  <div class="col-lg-6">
+    <div class="mb-3 form-group">
+      <label>Number A:</label>
+      <input
+        name="number-a"
+        type="number"
+        class="form-control"
+        [(ngModel)]="a"
+      />
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="mb-3 form-group">
+      <label>Number B:</label>
+      <input
+        name="number-b"
+        type="number"
+        class="form-control"
+        [(ngModel)]="b"
+      />
+    </div>
+  </div>
+  <div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="calculate('+')"
+    >
+      Sum
+    </button>
+  </div>
+</form>
