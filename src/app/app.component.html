@@ -4,16 +4,24 @@
       <h1>{{ title }}</h1>
     </div>
     <div class="card-body py-3">
-      <div class="mb-3">
-        <label>Number A:</label>
-        <input type="number" class="form-control" [(ngModel)]="calc.A" />
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-3">
+            <label>Number A:</label>
+            <input type="number" class="form-control" [(ngModel)]="calc.A" />
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mb-3">
+            <label>Number B:</label>
+            <input type="number" class="form-control" [(ngModel)]="calc.B" />
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label>Number B:</label>
-        <input type="number" class="form-control" [(ngModel)]="calc.B" />
-      </div>
-      <div class="mb-3">
-        <button class="btn btn-primary" (click)="calculate('+')">Sum</button>
+      <div class="row">
+        <div class="mb-3">
+          <button class="btn btn-primary" (click)="calculate('+')">Sum</button>
+        </div>
       </div>
     </div>
     <div class="card-footer text-center">
