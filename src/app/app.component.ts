@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-type OperatorType = '+' | '-' | '/' | '*'
+type OperatorType = '+' | '-' | '/' | '*';
+const operations: {[key in OperatorType]: (a: number, b: number) => number} = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '/': (a, b) => a / b,
+  '*': (a, b) => a * b,
+};
 
 @Component({
   selector: 'app-root',
@@ -17,14 +23,6 @@ export class AppComponent {
   };
 
   calculate(operator: OperatorType) {
-    if (operator === '+') {
-      this.calc.result = this.calc.A + this.calc.B
-    } else if (operator === '-') {
-      this.calc.result = this.calc.A - this.calc.B
-    } else if (operator === '/') {
-      this.calc.result = this.calc.A / this.calc.B
-    } else if (operator === '*') {
-      this.calc.result = this.calc.A * this.calc.B
-    }
+    this.calc.result = operations[operator](this.calc.A, this.calc.B);
   }
 }
